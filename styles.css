@@ -1,0 +1,38 @@
+#ui-overlay {
+    position: absolute;          /* positioned relative to page/canvas */
+    pointer-events: none;        /* let mouse events fall through to canvas by default */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;                /* above canvas */
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0b0b0b;
+}
+
+.instr-box {
+  position: absolute;          
+  pointer-events: auto;        /* allow clicks if needed */
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 140px;
+  max-width: 420px;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #111;
+}
+
+/* Slight visual variants */
+.instr-box.small { padding: 6px 8px; font-size: 11px; }
+.instr-box.title { font-weight: 600; margin-bottom: 4px; }
+
+/* helper classes so boxes don't obscure canvas controls if you want them click-through */
+.instr-box.clickthrough { pointer-events: none; }
+
+.instr-box.hidden { display: none; }
+
+/* ensure overlay container is above other page content */
+body { position: relative; }
